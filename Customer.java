@@ -9,9 +9,9 @@ import java.util.Scanner;
 class NotEligibleException extends Exception {
 	
 
-	public void voting(int a) throws NotEligibleException
+	public void voting(int age) throws NotEligibleException
 	{
-    if(a>=18)
+    if(age>=18)
     	{
         System.out.println("Eligible for Voting");
         }
@@ -28,19 +28,19 @@ class NotEligibleException extends Exception {
 public class Customer{
 	Scanner sc=new Scanner(System.in);
 	public static void main(String[] args) {		
-		Customer c=new Customer();
-		c.arithmetic();
+		Customer customer=new Customer();
+		customer.arithmetic();
 		
 	}
 
 	private void arithmetic() {
 		// TODO Auto-generated method stub
 		try {
-		int a=3/0;
+		int divide=3/0;
 		}
-		catch(ArithmeticException ae) {
+		catch(ArithmeticException e) {
 			System.out.println("/0 please check and change it");
-			ae.printStackTrace();
+			e.printStackTrace();
 		}
 		inputmismatch();
 	}
@@ -49,20 +49,20 @@ public class Customer{
 		// TODO Auto-generated method stub
 		try {
 			System.out.println("enter two  number");
-		int a=sc.nextInt();
-		int b=sc.nextInt();
-		int c=a/b;
-		System.out.println("divison result="+c);
+		int firstinput=sc.nextInt();
+		int secondinput=sc.nextInt();
+		int divide=firstinput/secondinput;
+		System.out.println("divison result="+divide);
 		}
-		catch(InputMismatchException ex) {
+		catch(InputMismatchException e) {
 			System.out.println("please check ur inputs");
-			ex.printStackTrace();
+			e.printStackTrace();
 			
 			
 		}
-		catch(ArithmeticException ex) {
+		catch(ArithmeticException e) {
 			System.out.println("0 is Not allowed in divison");
-			ex.printStackTrace();
+			e.printStackTrace();
 			
 		}
 		arrayindex();
@@ -71,14 +71,12 @@ public class Customer{
 	private void arrayindex() {
 		// TODO Auto-generated method stub
 		try {
-			
-		
-		int arr[]= {1,2,3,4,5};
-		System.out.println(arr[7]);
+		int numbers[]= {1,2,3,4,5};
+		System.out.println(numbers[7]);
 		}
-		catch(ArrayIndexOutOfBoundsException ai) {
+		catch(ArrayIndexOutOfBoundsException e) {
 			System.out.println("give valid index");
-			ai.printStackTrace();
+			e.printStackTrace();
 		}
 		
 			nulls();
@@ -87,8 +85,8 @@ public class Customer{
 	private void nulls() {
 		// TODO Auto-generated method stu
 		try {
-			String s=null;
-			System.out.println(s.charAt(0));
+			String words=null;
+			System.out.println(words.charAt(0));
 		}
 		catch(NullPointerException n) {
 			System.out.println("String Value is null");
@@ -104,22 +102,22 @@ public class Customer{
 		String word=sc.next();
 		System.out.println(word.charAt(word.length()+1));
 		}
-		catch(StringIndexOutOfBoundsException se) {
+		catch(StringIndexOutOfBoundsException e) {
 			
 			System.out.println("out of length!!!!");
-			se.printStackTrace();
+			e.printStackTrace();
 		}	
 		userDefined();
 		
 	}
 
 	private void userDefined()  {
-		NotEligibleException ne=new NotEligibleException();
+		NotEligibleException notEligible=new NotEligibleException();
 		System.out.println("enter your Age");
 		try {
-			ne.voting(sc.nextInt());
-		} catch (NotEligibleException e) {
-			// TODO Auto-generated catch block
+			notEligible.voting(sc.nextInt());
+		} catch (NotEligibleException e) 
+		{	
 			e.printStackTrace();
 		}
 	}
