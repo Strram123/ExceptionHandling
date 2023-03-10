@@ -88,9 +88,9 @@ public class Customer{
 			String words=null;
 			System.out.println(words.charAt(0));
 		}
-		catch(NullPointerException n) {
+		catch(NullPointerException e) {
 			System.out.println("String Value is null");
-			n.printStackTrace();
+			e.printStackTrace();
 		}
 		word();
 	}
